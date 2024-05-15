@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of Life</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Liens des assets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center">Game of Life</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5">
+          <div id="rules">
+            <h2>Rules</h2>
+            <ul>
+              <li>
+                Toute cellule vivante avec moins de deux voisins vivants meurt
+                par sous-population.
+              </li>
+              <li>
+                Toute cellule vivante avec deux ou trois voisins vivants survit
+                à la génération suivante.
+              </li>
+              <li>
+                Toute cellule vivante avec plus de trois voisins vivants meurt
+                par surpopulation.
+              </li>
+              <li>
+                Toute cellule morte avec exactement trois voisins vivants
+                devient une cellule vivante par reproduction.
+              </li>
+            </ul>
+          </div>
+          <div id="game-container">
+            <!-- Ce canvas est l'exemple et le but à accomplir, une grille ayant déjà un tour que l'utilisateur doit essayer de reproduire -->
+            <canvas
+              class="mx-auto text-center"
+              id="gameCanvas"
+              width="400"
+              height="400"
+            ></canvas>
+            <div id="controls">
+              <button class="btn" id="resetBtn">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 mx-auto text-center justify-content-center pt-4">
+          <div id="game-container">
+            <!-- La grille est vide vide au début puis l'utilisateur peut cliquer sur la grille de 5x5 pour changer la case en vert
+            et ainsi essayer de reproduire la case d'exemple qui est un tour plus tard -->
+            <canvas
+              class="mx-auto text-center"
+              id="gameUser"
+              width="300"
+              height="300"
+            ></canvas>
+            <div id="controls mb-4">
+              <!-- Le boutton permet de prendre la grille utilisateur et en suivant les règles du Game Of Life transformer sa grille -->
+              <button class="btn" id="executeBtn">Execute</button>
+              <button class="btn" id="solutionBtn">See solution</button>
+            </div>
+          </div>
+          <div class="d-flex" style="height: 50px"></div>
+          <div class="row">
+            <div
+              class="col-xl-6 mx-auto text-center justify-content-center pt-4"
+            >
+              <p class="lead">Game after one round</p>
+              <div id="game-container">
+                <!-- Afficher la grille utilisateur apres un tour quand le bouton execute est cliqué -->
+                <canvas
+                  id="gameAfterOneRound"
+                  width="300"
+                  height="300"
+                ></canvas>
+              </div>
+            </div>
+            <div
+              class="col-xl-6 mx-auto text-center justify-content-center pt-4"
+            >
+              <p class="lead">Solution</p>
+              <div id="game-container">
+                <!-- Afficher la grille utilisateur apres un tour quand le bouton execute est cliqué -->
+                <canvas id="gameSolution" width="300" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./src/app.js" defer></script>
+</html>

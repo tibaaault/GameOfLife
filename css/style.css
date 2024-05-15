@@ -1,0 +1,24 @@
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#gameUser {
+background-color: black;
+}
+
+#controls {
+    margin-top: 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+canvas {
+    border: 1px solid black; /* Ajoute une bordure pour mieux visualiser les canvas */
+    display: block; /* Assure que les canvas se comportent comme des blocs */
+    margin: 10px auto; /* Centre les canvas horizontalement avec une marge de 10px autour */
+}
